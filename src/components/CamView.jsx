@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 
 const BACKEND_URL = "http://18.116.13.65:8000"
-const REC_WINDOW = 5000
+const REC_WINDOW = 20000
 const INTERVAL = 100
 const BUFSIZE = REC_WINDOW / INTERVAL
 
@@ -102,7 +102,7 @@ const CamView = () => {
     
       <button
         onClick={handleButton}
-        className="px-4 py-2 my-2 text-white rounded-lg shadow transition"
+        className={isRecording ? "px-4 py-2 my-2 text-white rounded-lg bg-red shadow transition":"px-4 py-2 my-2 text-white rounded-lg shadow transition" }
       >
         {isProcessing ? isRecording ? "Recording" : "Processing" : "Start"}
       </button>
